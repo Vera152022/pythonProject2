@@ -1,12 +1,12 @@
 import sys
 
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from launch import Ui_MainWindow_1
+from launch import Example
 import go
 import register
 
 
-class Beginning(QMainWindow, Ui_MainWindow_1):
+class Beginning(QMainWindow, Example):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
