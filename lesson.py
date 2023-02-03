@@ -1,4 +1,6 @@
 import random
+import pymorphy2
+morph = pymorphy2.MorphAnalyzer()
 
 from PyQt5.QtWidgets import QMainWindow
 from lesson_2 import Ui_MainWindow_4
@@ -158,19 +160,30 @@ class Learn(QMainWindow, Ui_MainWindow_4):
             db.commit()
 
     def check(self):
+        if self.stop != 0:
+            return 0
         self.stop += 1
-        for i in range(1, 21):
-            eval(f'self.answer_{i}.setEnabled(False)')
         self.total = 0
-        self.number = 2
-        number_3 = random.randint(0, 4)
-        self.support = ['Вы умничка! Двигайтесь в том же направлении!!',
-'Молодец! Двигайся в том же направлении :)', 'Ура, вы смогли дойти до цели!',
-'Похоже, я вижу перед собой гения', 'Класс!']
         for i in range(1, 21):
+            r = False
+            eval(f'self.answer_{i}.setEnabled(False)')
             if eval(f'self.answer_{i}.text()') != \
                             str(self.dictionary[i]):
                 self.total += 1
+                r = True
+            if r:
+                ans = eval(f'self.answer_{i}.text()')
+                if ans:
+                    ans = '\u0336'.join(ans) + '\u0336' + ' ' + str(self.dictionary[i])
+                else:
+                    ans = 'Вы не ввели ответ'
+                eval(f'self.answer_{i}.setText("{ans}")')
+        self.number = 2
+        number_3 = random.randint(0, 4)
+        self.support = ['Вы умничка! Двигайтесь в том же направлении!!',
+                        'Молодец! Двигайся в том же направлении :)',
+                        'Ура, вы смогли дойти до цели!',
+                        'Похоже, я вижу перед собой гения', 'Класс!']
         if self.total == 0 and self.stop == 1:
             self.done.setText('МОЛОДЕЦ!!')
             self.number = 1
@@ -185,27 +198,10 @@ class Learn(QMainWindow, Ui_MainWindow_4):
         elif self.total > 0:
             self.done.setText('Упс!')
             f = open("all.txt", 'a')
-            if self.total == 1:
-                f.write(f'Ой, у вас всего лишь {self.total} '
-                f'ошибка, в следующий раз все получится! Я в вас верю.')
-            elif self.total == 2 or self.total == 3 or \
-                        self.total == 4:
-                f.write(f'Ой, у вас всего лишь {self.total} '
-                f'ошибки, в следующий раз все получится! Я в вас верю.')
-            else:
-                f.write(f'Ой, у вас всего лишь {self.total} '
-                    f'ошибок, в следующий раз все получится! Я в вас верю.')
-            f.close()
+            word = morph.parse('ошибка')[0].make_agree_with_number(self.total).word
+            res = f'Ой, у вас всего лишь {self.total} {word}, в следующий раз все получится! Я в вас верю.'
+            f.write(res)
+            self.result.setText(res)
+            self.adds()
             self.w = Pictures(self.number)
             self.w.show()
-            if self.total == 1:
-                self.result.setText(f'Ой, у вас всего лишь '
-        f'{self.total} ошибка, в следующий раз все получится! Я в вас верю.')
-            elif self.total == 2 or self.total == 3 or \
-                        self.total == 4:
-                self.result.setText(f'Ой, у вас всего лишь '
-        f'{self.total} ошибки, в следующий раз все получится! Я в вас верю.')
-            else:
-                self.result.setText(f'Ой, у вас всего лишь '
-        f'{self.total} ошибок, в следующий раз все получится! Я в вас верю.')
-            self.adds()
