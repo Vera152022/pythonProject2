@@ -5,6 +5,8 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from main_file import Ui_MainWindow_3
 from lesson import Learn
 from logic_2 import Logically
+from tablelesson import TableLesson
+from memory_training import MemoryTraining
 
 
 class InTheBeginning(QMainWindow, Ui_MainWindow_3):
@@ -29,8 +31,7 @@ class InTheBeginning(QMainWindow, Ui_MainWindow_3):
             self.w.setFixedSize(800, 460)
             self.w.show()
         else:
-            self.answer.setText('Этот уровень откроеся при '
-            'прохождение 3 правильно пройденных уроков.')
+            self.answer.setText('Этот уровень откроется при правильном прохождении 3 уроков.')
 
     def tabChanged(self):
         try:
@@ -69,6 +70,13 @@ class InTheBeginning(QMainWindow, Ui_MainWindow_3):
         elif self.choice.currentText() == 'Умножение':
             self.w5 = Learn(self.email, '6')
             self.w5.setFixedSize(800, 600)
+            self.w5.show()
+        elif self.choice.currentText() == 'Таблица Шульте':
+            self.w5 = TableLesson()
+            self.w5.setFixedSize(900, 650)
+            self.w5.show()
+        elif self.choice.currentText() == 'Тренировка памяти':
+            self.w5 = MemoryTraining()
             self.w5.show()
 
 
