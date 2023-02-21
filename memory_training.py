@@ -8,7 +8,7 @@ class MemoryTraining(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.pushButton.clicked.connect(self.start)
-        self.words = list(map(lambda x: x[:-1], open('slovar.txt').readlines()))
+        self.words = list(map(lambda x: x[:-1], open('slovar.txt', encoding="utf-8").readlines()))
         self.s = 0
         self.mistakes = 0
         random.shuffle(self.words)
@@ -55,4 +55,3 @@ class MemoryTraining(QMainWindow, Ui_MainWindow):
             else:
                 f += e
         return f
-
