@@ -69,7 +69,6 @@ class MemoryTraining(QMainWindow, Ui_MainWindow):
                         (self.perfect, self.email,))
         db.commit()
 
-
     def kostyl(self, word):
         f = ''
         for e in list(word):

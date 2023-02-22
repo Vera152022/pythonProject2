@@ -16,11 +16,11 @@ class Example(object):
         self.Text = QtWidgets.QLabel(self.centralwidget)
         self.Text.setGeometry(QtCore.QRect(40, 100, 660, 31))
         self.Text.setObjectName("Text")
-        self.Text.setFont(QFont('PT Astra Serif', 15))
+        self.Text.setFont(QFont('Dosis', 15))
         self.Yes = QtWidgets.QPushButton(self.centralwidget)
         self.Yes.setGeometry(QtCore.QRect(140, 230, 121, 70))
         self.Yes.setObjectName("Yes")
-        self.Yes.setFont(QFont('PT Astra Serif', 10))
+        self.Yes.setFont(QFont('Dosis', 15))
         self.Yes.setStyleSheet("""
                     QPushButton { background-color: white}
                     QPushButton:!hover { background-color: #91969C}
@@ -28,7 +28,7 @@ class Example(object):
         self.No = QtWidgets.QPushButton(self.centralwidget)
         self.No.setGeometry(QtCore.QRect(400, 230, 121, 70))
         self.No.setObjectName("No")
-        self.No.setFont(QFont('PT Astra Serif', 7))
+        self.No.setFont(QFont('Dosis', 15))
         self.No.setStyleSheet('QPushButton {background-color: #91969C}')
         self.No.setStyleSheet("""
                     QPushButton { background-color: white}
@@ -44,7 +44,7 @@ class Example(object):
         self.setWindowTitle(_translate("MainWindow", "Обучашка"))
         self.Text.setText(_translate("MainWindow", "Вы уже регистрировались в нашем приложении?"))
         self.Yes.setText(_translate("MainWindow", "Да"))
-        self.No.setText(_translate("MainWindow", "Нет, но очень хочу"))
+        self.No.setText(_translate("MainWindow", "Нет"))
 
     def paintEvent(self, e):
 
