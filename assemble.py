@@ -76,7 +76,7 @@ class InTheBeginning(QMainWindow, Ui_MainWindow_3):
             self.w5.setFixedSize(900, 650)
             self.w5.show()
         elif self.choice.currentText() == 'Тренировка памяти':
-            self.w5 = MemoryTraining()
+            self.w5 = MemoryTraining(self.email)
             self.w5.show()
 
 
