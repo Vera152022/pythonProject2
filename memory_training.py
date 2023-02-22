@@ -17,6 +17,7 @@ class MemoryTraining(QMainWindow, Ui_MainWindow):
         self.email = email
         self.mistakes = 0
         random.shuffle(self.words)
+        self.pushButton.setText("Продолжить")
         for i in range(5):
             eval(f'self.label_{i + 1}.setText("{self.words[i]}")')
             eval(f'self.lineEdit_{i + 1}.setEnabled(False)')
@@ -30,14 +31,14 @@ class MemoryTraining(QMainWindow, Ui_MainWindow):
             self.label_6.setText('')
             self.s += 1
         elif self.s == 1:
+            w = self.words[:5]
             for i in range(5):
-                if not self.kostyl(eval(f'self.lineEdit_{i + 1}.text()')) == self.words[i]:
-                    ans = '\u0336'.join(eval(f'self.lineEdit_{i + 1}.text()')) + '\u0336' + ' ' + str(self.words[i])
+                if not self.kostyl(eval(f'self.lineEdit_{i + 1}.text()')) in w:
                     if eval(f'self.lineEdit_{i + 1}.text()') == '':
                         eval(f'self.lineEdit_{i + 1}.setText("Нет ответа")')
-                    else:
-                        eval(f'self.lineEdit_{i + 1}.setText("{ans}")')
                     self.mistakes += 1
+                else:
+                    w.remove(self.kostyl(eval(f'self.lineEdit_{i + 1}.text()')))
                 eval(f'self.lineEdit_{i + 1}.setEnabled(False)')
             self.pushButton.setText("Завершить")
             if self.mistakes == 0:
