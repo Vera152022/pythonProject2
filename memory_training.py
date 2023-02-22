@@ -12,15 +12,13 @@ class MemoryTraining(QMainWindow, Ui_MainWindow):
         self.s = 0
         self.mistakes = 0
         random.shuffle(self.words)
-        self.pushButton.setText("Продолжить")
         for i in range(5):
             eval(f'self.label_{i + 1}.setText("{self.words[i]}")')
-            eval(f'self.lineEdit_{i + 1}.setEnabled(False)')
 
     def start(self):
         if self.s == 0:
             for i in range(5):
-                eval(f'self.label_{i + 1}.setText("")')
+                eval(f'self.label_{i + 1}.hide()')
                 eval(f'self.lineEdit_{i + 1}.setEnabled(True)')
             self.pushButton.setText("Проверить")
             self.label_6.setText('')
@@ -35,6 +33,7 @@ class MemoryTraining(QMainWindow, Ui_MainWindow):
                 else:
                     w.remove(self.kostyl(eval(f'self.lineEdit_{i + 1}.text()')))
                 eval(f'self.lineEdit_{i + 1}.setEnabled(False)')
+                eval(f'self.label_{i + 1}.show()')
             self.pushButton.setText("Завершить")
             if self.mistakes == 0:
                 self.label_6.setText('Всё правильно! Вы молодец!')
