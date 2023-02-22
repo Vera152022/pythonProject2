@@ -82,7 +82,7 @@ class Ui_MainWindow_3(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.setWindowTitle(_translate("MainWindow", "Обучашка"))
         self.welcome.setText(_translate("MainWindow", "Здраствуйте,"))
         self.lesson.setText(_translate("MainWindow", "Начать урок"))
         self.textBrowser.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

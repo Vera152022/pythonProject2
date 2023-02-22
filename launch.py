@@ -19,7 +19,7 @@ class Example(object):
         self.Text.setFont(QFont('Dosis', 15))
         self.Yes = QtWidgets.QPushButton(self.centralwidget)
         self.Yes.setGeometry(QtCore.QRect(140, 230, 121, 70))
-        self.Yes.setObjectName("Yes")
+        self.Yes.setObjectName("Да")
         self.Yes.setFont(QFont('Dosis', 15))
         self.Yes.setStyleSheet("""
                     QPushButton { background-color: white}
