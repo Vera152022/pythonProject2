@@ -68,6 +68,15 @@ class Ui_MainWindow_2(object):
 
         self.setStyleSheet("#MainWindow{border-image:url(fon_1.jpg)}")
 
+        self.go.setStyleSheet("""
+                            QPushButton { background-color: white}
+                            QPushButton:!hover { background-color: #FF9218}
+                        """)
+        self.back.setStyleSheet("""
+                            QPushButton { background-color: white}
+                            QPushButton:!hover { background-color: #FF9218}
+                        """)
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("MainWindow", "Обучашка"))
