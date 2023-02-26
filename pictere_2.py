@@ -6,6 +6,7 @@ class Pictures(QMainWindow):
     def __init__(self, number):
         super().__init__()
         self.number = number
+        self.setWindowTitle('.')
         self.initUI()
 
     def initUI(self):

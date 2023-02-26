@@ -118,3 +118,4 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "TextLabel"))
         self.label_1.setText(_translate("MainWindow", "TextLabel"))
         self.pushButton.setText(_translate("MainWindow", "Продолжить"))
+        MainWindow.setWindowTitle("Урок")

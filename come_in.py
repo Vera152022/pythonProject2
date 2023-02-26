@@ -74,3 +74,4 @@ class Ui_MainWindow_2(object):
         self.label_2.setText(_translate("MainWindow", "Введите почту:"))
         self.label_4.setText(_translate("MainWindow", "Пароль:"))
         self.back.setText(_translate("MainWindow", "Назад"))
+        MainWindow.setWindowTitle("Вход")

@@ -381,3 +381,4 @@ class Ui_MainWindow(object):
         self.timer.setText(_translate("MainWindow", "30"))
         self.label.setText(_translate("MainWindow", "Когда вы нажмёте эту кнопку, начнётся обратный отсчёт. Внимательно нажимайте на цифры в правильном порядке. Удачи!"))
         self.startButton.setText(_translate("MainWindow", "Старт!"))
+        MainWindow.setWindowTitle("Урок")
