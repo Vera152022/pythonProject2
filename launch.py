@@ -23,21 +23,23 @@ class Example(object):
         self.Yes.setFont(QFont('Dosis', 15))
         self.Yes.setStyleSheet("""
                     QPushButton { background-color: white}
-                    QPushButton:!hover { background-color: #91969C}
+                    QPushButton:!hover { background-color: #FF9218}
                 """)
         self.No = QtWidgets.QPushButton(self.centralwidget)
         self.No.setGeometry(QtCore.QRect(400, 230, 121, 70))
         self.No.setObjectName("No")
         self.No.setFont(QFont('Dosis', 15))
-        self.No.setStyleSheet('QPushButton {background-color: #91969C}')
+        self.No.setStyleSheet('QPushButton {background-color: #FF9218}')
         self.No.setStyleSheet("""
                     QPushButton { background-color: white}
-                    QPushButton:!hover { background-color: #91969C}
+                    QPushButton:!hover { background-color: #FF9218}
                 """)
         MainWindow.setCentralWidget(self.centralwidget)
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         self.show()
+
+        self.setStyleSheet("#MainWindow{border-image:url(fon_1.jpg)}")
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
@@ -45,20 +47,3 @@ class Example(object):
         self.Text.setText(_translate("MainWindow", "Вы уже регистрировались в нашем приложении?"))
         self.Yes.setText(_translate("MainWindow", "Да"))
         self.No.setText(_translate("MainWindow", "Нет"))
-
-    def paintEvent(self, e):
-
-        qp = QPainter()
-        qp.begin(self)
-        self.drawRectangles(qp)
-        qp.end()
-
-
-    def drawRectangles(self, qp):
-        col = QColor(0, 0, 0)
-        col.setNamedColor('#d4d4d4')
-        qp.setPen(col)
-        qp.setBrush(QColor('#91969C'))
-        qp.drawRect(0, 230, 660, 70)
-
-

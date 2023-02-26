@@ -66,6 +66,8 @@ class Ui_MainWindow_5(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        self.setStyleSheet("#MainWindow{border-image:url(fon_1.jpg)}")
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("MainWindow", "Обучашка"))

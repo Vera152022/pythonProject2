@@ -80,6 +80,9 @@ class Ui_MainWindow_3(object):
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        self.setStyleSheet("#MainWindow{border-image:url(fon_1.jpg)}")
+        self.tabWidget.setStyleSheet("QWidget {background-color: #FFE4E1 }")
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("MainWindow", "Обучашка"))

@@ -109,6 +109,8 @@ class Ui_MainWindow_6(object):
         self.label_2.setFont(QFont('Dosis', 15))
         self.back.setFont(QFont('Dosis', 15))
 
+        self.setStyleSheet("#MainWindow{border-image:url(fon_1.jpg)}")
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
