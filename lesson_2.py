@@ -252,3 +252,4 @@ class Ui_MainWindow_4(object):
         self.text_8.setText(_translate("MainWindow", "TextLabel"))
         self.text_9.setText(_translate("MainWindow", "TextLabel"))
         self.text_10.setText(_translate("MainWindow", "TextLabel"))
+        MainWindow.setWindowTitle("Урок")

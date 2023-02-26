@@ -121,3 +121,4 @@ class Ui_MainWindow_6(object):
         self.label.setText(_translate("MainWindow", "Имя:"))
         self.label_2.setText(_translate("MainWindow", "Возраст:"))
         self.back.setText(_translate("MainWindow", "Назад"))
+        MainWindow.setWindowTitle("Регистрация")

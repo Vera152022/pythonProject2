@@ -104,4 +104,5 @@ class Ui_MainWindow_3(object):
         self.label_3.setText(_translate("MainWindow", "Количество тестов, сделанных на отлично:"))
         self.total.setText(_translate("MainWindow", "0"))
         self.excellent.setText(_translate("MainWindow", "0"))
+        MainWindow.setWindowTitle("Главное меню")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Статистика"))
